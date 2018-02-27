@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>html() and val() Madlib</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script>
+    $(function(){
+      
+      $('button').click(function(){
+        // get the inputs from the user
+        var name = $("#name").val()
+        var age = $("#age").val()
+        var skills = $("#skills").val()
+        var school = $("#school").val()
+        var color1 = $("#color1").val()
+        
+        var story = "There once was a " +
+                    name + " hobbit named " + age + ". " + 
+                    skills + " liked to eat " + school +" " + color1 + ".";
+        
+        $("button").click(function(){
+          $("p").html(story);
+          $("h1").html(name);
+          $("h1").html(age);
+        });
+        // and make the story appear on the screen
+        // set the color of the story to color1
+        $('p').css('color',color1).val(color1)
+        $('h1').css('color',color1).val(color1)
+        // Extension! Make color2 appear as THAT color in the story!
+        
+      });
+      
+    });
+  </script>
+</head>
+<body>
+  <h2>Hi Im going to help you make a resume, but first I need some information.</h2>
+  What is your name?: <input id="name"><br>
+  How old are you?: <input id="age"><br>
+  What skills do you have? <input id="skills"><br>
+  What school do you currently attend? <input id="school"><br>
+  What color do you want the background to be? <input id="color1"><br>
+  <button>Generate Madlib!</button>
+  <p></p>
+  <h1></h1>
+  
+  
+</body>
+</html>
