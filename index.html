@@ -22,9 +22,9 @@
                     skills + " liked to eat " + school +" " + color1 + ".";
         
         $("button").click(function(){
-          $("p").html(story);
-          $("h1").html(name);
-          $("h1").html(age);
+          $("#story").html(story);
+          $("#name1").html(name);
+          $("#age1").html(age);
         });
         // and make the story appear on the screen
         // set the color of the story to color1
@@ -44,9 +44,10 @@
   What skills do you have? <input id="skills"><br>
   What school do you currently attend? <input id="school"><br>
   What color do you want the background to be? <input id="color1"><br>
-  <button>Generate Madlib!</button>
-  <p></p>
-  <h1></h1>
+  <button>Generate Resume</button>
+  <p id='story'></p>
+  <h1 id='name1'></h1>
+  <h1 id='age1'></h1>
   
   
 </body>
