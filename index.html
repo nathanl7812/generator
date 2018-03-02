@@ -12,24 +12,35 @@
       $('button').click(function(){
         // get the inputs from the user
         var name = $("#name").val()
+        name = name.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+        return letter.toUpperCase();
+        });
         var age = $("#age").val()
         var skills = $("#skills").val()
         var school = $("#school").val()
+        school = school.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+        return letter.toUpperCase();
+        });
         var color1 = $("#color1").val()
-        
-        var story = "There once was a " +
-                    name + " hobbit named " + age + ". " + 
-                    skills + " liked to eat " + school +" " + color1 + ".";
+        var color2 = $("#color2").val()
+        // var story = "There once was a " +
+        //             name + " hobbit named " + age + ". " + 
+        //             skills + " liked to eat " + school +" " + color1 + ".";
         
         $("button").click(function(){
-          $("#story").html(story);
           $("#name1").html(name);
           $("#age1").html(age);
+          $("#skills1").html(skills);
+          $("#school1").html(school);
+          $("#color1").html(color);
+          $("#color2").html(color);
         });
         // and make the story appear on the screen
         // set the color of the story to color1
-        $('p').css('color',color1).val(color1)
-        $('h1').css('color',color1).val(color1)
+        $('p').css('color',color1)
+        $('h1').css('color',color1)
+        $('h4').css('color',color1)
+        $('*').css('background',color2)
         // Extension! Make color2 appear as THAT color in the story!
         
       });
@@ -43,11 +54,18 @@
   How old are you?: <input id="age"><br>
   What skills do you have? <input id="skills"><br>
   What school do you currently attend? <input id="school"><br>
-  What color do you want the background to be? <input id="color1"><br>
+  What color do you want the background to be?<input id="color2"><br>
+  What color do you want the text to be?<input id="color1"><br>
   <button>Generate Resume</button>
-  <p id='story'></p>
   <h1 id='name1'></h1>
-  <h1 id='age1'></h1>
+  Age:<h4 id='age1'></h4>
+<hr>
+  <h1></h1>
+  Skills:<h4 id='skills1'></h4>
+<hr>
+  School currently attending:<h4 id='school1'></h4>
+<hr>
+  <h4 id='color1'></h4>
   
   
 </body>
